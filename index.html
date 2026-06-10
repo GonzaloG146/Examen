@@ -10,165 +10,420 @@
 <body>
 
 <header>
-    <div class="header-badge">Trabajo Académico</div>
+    <div class="header-badge">Guía de Aprendizaje · SENA</div>
     <h1>Metodologías de Desarrollo<br>de Software</h1>
-    <p>Un recorrido por los enfoques más utilizados para planificar, desarrollar y mantener aplicaciones informáticas de manera eficiente.</p>
+    <p>Resumen de la guía oficial: marcos tradicionales, ágiles, roles, principios y planeación de proyectos.</p>
 </header>
+
+<div class="nav-pills">
+    <a href="#intro"      class="nav-pill">¿Qué es una metodología?</a>
+    <a href="#cascada"    class="nav-pill">Cascada</a>
+    <a href="#rup"        class="nav-pill">RUP</a>
+    <a href="#agiles"     class="nav-pill">Marcos Ágiles</a>
+    <a href="#xp"         class="nav-pill">XP</a>
+    <a href="#rad"        class="nav-pill">RAD</a>
+    <a href="#scrum"      class="nav-pill">Scrum</a>
+    <a href="#planeacion" class="nav-pill">Planeación</a>
+    <a href="#glosario"   class="nav-pill">Glosario</a>
+</div>
 
 <main>
 
-    
-    <div class="card intro-card">
+    <!-- 1. Introducción -->
+    <div class="card" id="intro">
         <div class="section-title">
             <div class="section-num">1</div>
-            <h2>¿Qué es una Metodología?</h2>
+            <h2>¿Qué es una Metodología de Desarrollo?</h2>
         </div>
-        <p>Es un conjunto de procesos, técnicas y herramientas que ayudan a planificar, desarrollar y mantener aplicaciones informáticas.</p>
-        <div class="example-box" style="margin-top:14px;">
-            <div class="example-label">Ejemplo</div>
-            <p>Una empresa que crea una app para gestionar citas médicas usa una metodología para organizar tareas, distribuir responsabilidades y controlar el avance del proyecto.</p>
+        <p class="intro-text">
+            Las metodologías de desarrollo de software siempre parten de un componente teórico y, cuando son usadas por los equipos de trabajo, conllevan a la utilización de un conjunto de <strong>técnicas y métodos</strong> que determinarán las tareas generales y específicas para alcanzar un objetivo.
+        </p>
+        <div class="quote-block">
+            "Una metodología hace referencia a un conjunto de procedimientos genéricos y lógicos que se utilizan para alcanzar un objetivo particular usando un conjunto de habilidades y conocimientos."
+            <br><small style="opacity:.7;font-style:normal;">— Maida y Pacienzia (2015)</small>
         </div>
+        <p class="intro-text" style="margin-top:12px;">
+            Existen diferentes tipos, pensados para problemas particulares de la industria. Cada una tiene <strong>ventajas y enfoques reutilizables</strong> en distintos contextos. Se agrupan en dos grandes familias: marcos de trabajo <strong>tradicionales</strong> y marcos de trabajo <strong>ágiles</strong>.
+        </p>
     </div>
 
- 
-    <div class="card">
+    <!-- 2. Tradicionales -->
+    <div class="card" id="cascada">
         <div class="section-title">
             <div class="section-num">2</div>
             <h2>Marcos de Trabajo Tradicionales</h2>
         </div>
+        <p class="intro-text" style="margin-bottom:22px;">
+            Se caracterizan por centrar la mayor parte de su esfuerzo en la <strong>planeación y control del proceso</strong>, lo que conlleva a una documentación exhaustiva de los requisitos y modelos del sistema en etapas iniciales. Son óptimos cuando los requisitos están plenamente identificados y no se producirán cambios mientras el proyecto se finaliza.
+        </p>
 
-        <div class="method-block">
-            <h3>Modelo Cascada</h3>
-            <p>Metodología secuencial donde cada fase debe completarse antes de iniciar la siguiente.</p>
+        <!-- Cascada -->
+        <div class="method-block blue">
+            <div class="method-label blue">Metodología Tradicional</div>
+            <h3>📋 Modelo Cascada <span style="font-weight:400;font-size:.85rem;color:var(--muted)">(Royce, 1970)</span></h3>
+            <p class="desc">
+                Es uno de los modelos genéricos más ampliamente conocidos en la ingeniería de software. Plantea un proceso <strong>lineal y secuencial</strong>: cada fase se realiza una única vez y sus resultados son la entrada de la fase siguiente. Ninguna fase puede iniciar si la anterior no ha sido finalizada formalmente.
+            </p>
+            <p style="font-size:.88rem;color:var(--muted);margin-bottom:12px;">Según Sommerville (2005), se compone de 5 etapas:</p>
             <div class="tag-list">
-                <span class="tag">Análisis de requisitos</span>
-                <span class="tag">Diseño</span>
-                <span class="tag">Implementación</span>
-                <span class="tag">Pruebas</span>
-                <span class="tag">Mantenimiento</span>
+                <span class="tag blue">1. Análisis de requisitos</span>
+                <span class="tag blue">2. Diseño del sistema</span>
+                <span class="tag blue">3. Implementación</span>
+                <span class="tag blue">4. Pruebas</span>
+                <span class="tag blue">5. Mantenimiento</span>
             </div>
-            <div class="example-box">
+
+            <div class="pros-cons">
+                <div class="pros-cons-col pro">
+                    <h4>✓ Ventajas</h4>
+                    <ul>
+                        <li>Estructura sencilla, ideal para proyectos cortos y bien definidos</li>
+                        <li>Genera muy buena documentación e hitos claros</li>
+                        <li>Facilita la estimación de costos al inicio</li>
+                        <li>Fácil elaboración de cronogramas por fase</li>
+                    </ul>
+                </div>
+                <div class="pros-cons-col con">
+                    <h4>✗ Desventajas</h4>
+                    <ul>
+                        <li>Difícil adaptarse a proyectos complejos con múltiples equipos</li>
+                        <li>Complicado introducir cambios durante el proyecto</li>
+                        <li>El cliente solo participa al final del proceso</li>
+                        <li>Fallos pueden descubrirse tardíamente, cuando el sistema ya está en producción</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:10px;margin-top:4px;"><strong style="color:var(--text)">Roles típicos:</strong></p>
+            <div class="roles-grid">
+                <div class="role-item"><strong>Desarrolladores</strong><span>Rol más importante; crean el código del sistema</span></div>
+                <div class="role-item"><strong>Testers</strong><span>Encuentran fallas y las reportan a los desarrolladores</span></div>
+                <div class="role-item"><strong>Marketing</strong><span>Estrategias de negocio para posicionar el producto</span></div>
+                <div class="role-item"><strong>Gerente de proyecto</strong><span>Responsable de la calidad final; subdivide y administra tareas</span></div>
+            </div>
+
+            <div class="example-box" style="margin-top:16px;">
                 <div class="example-label">Ejemplo</div>
-                <p>Una universidad solicita un sistema de matrículas. Se recopilan todos los requisitos, se diseña el sistema, se programa y se realizan pruebas antes de ponerlo en funcionamiento.</p>
+                <p>Una universidad solicita un sistema de matrículas. Primero se recopilan todos los requisitos, luego se diseña el sistema, se programa y finalmente se realizan las pruebas antes de ponerlo en funcionamiento.</p>
             </div>
         </div>
 
-        <div class="method-block">
-            <h3>RUP — Rational Unified Process</h3>
-            <p>Metodología iterativa que divide el proyecto en fases para mejorar el control y reducir riesgos.</p>
+        <hr class="divider">
+
+        <!-- RUP -->
+        <div class="method-block blue" id="rup">
+            <div class="method-label blue">Metodología Tradicional</div>
+            <h3>🔄 RUP — Proceso Racional Unificado <span style="font-weight:400;font-size:.85rem;color:var(--muted)">(Kruchten, 2003)</span></h3>
+            <p class="desc">
+                Proceso de desarrollo de software tradicional desarrollado por Rational Software (IBM). Se centra en la <strong>arquitectura</strong>, es guiado por <strong>casos de uso</strong> (requerimientos) y divide el proyecto en cuatro grandes fases con iteraciones internas. Se apoya en el lenguaje de modelado <strong>UML</strong>.
+            </p>
             <div class="tag-list">
-                <span class="tag">Inicio</span>
-                <span class="tag">Elaboración</span>
-                <span class="tag">Construcción</span>
-                <span class="tag">Transición</span>
+                <span class="tag blue">Inicio</span>
+                <span class="tag blue">Elaboración</span>
+                <span class="tag blue">Construcción</span>
+                <span class="tag blue">Transición</span>
             </div>
-            <div class="example-box">
+
+            <p style="font-size:.88rem;color:var(--muted);margin-bottom:10px;">Descripción de cada fase:</p>
+            <div class="roles-grid" style="margin-bottom:14px;">
+                <div class="role-item"><strong>Inicio</strong><span>Comprensión del problema y selección de tecnología. Énfasis en modelado del negocio y requisitos.</span></div>
+                <div class="role-item"><strong>Elaboración</strong><span>Definición de arquitectura general del sistema y refinamiento de requisitos con UML.</span></div>
+                <div class="role-item"><strong>Construcción</strong><span>Varias iteraciones donde se desarrollan subconjuntos de requerimientos como casos de uso.</span></div>
+                <div class="role-item"><strong>Transición</strong><span>Disciplinas de pruebas y despliegue para garantizar que el producto esté listo para los usuarios.</span></div>
+            </div>
+
+            <p style="font-size:.85rem;color:var(--muted);margin-bottom:6px;"><strong style="color:var(--text)">Artefactos principales:</strong></p>
+            <div class="tag-list">
+                <span class="tag blue">Documento de especificación de requisitos</span>
+                <span class="tag blue">Modelos conceptuales (clases y E-R)</span>
+                <span class="tag blue">Diagramas UML</span>
+                <span class="tag blue">Diagramas de implementación</span>
+            </div>
+
+            <p style="font-size:.85rem;color:var(--muted);margin-top:8px;margin-bottom:8px;"><strong style="color:var(--text)">Categorías de roles:</strong> Analistas · Desarrolladores · Testers · Gestores</p>
+            <p style="font-size:.83rem;color:var(--muted);">Entre los analistas: analistas de negocio, diseñadores del sistema, especificadores de requisitos, diseñadores de interfaces. Entre los desarrolladores: cualquier rol de codificación o integración de código.</p>
+
+            <div class="example-box" style="margin-top:14px;">
                 <div class="example-label">Ejemplo</div>
-                <p>Una aplicación bancaria se construye por etapas: primero el módulo de usuarios, luego el de consultas y posteriormente las transferencias.</p>
+                <p>Una aplicación bancaria se construye por etapas: primero el módulo de usuarios, luego el de consultas y posteriormente las transferencias, cada una con su ciclo de casos de uso y revisión de arquitectura.</p>
             </div>
         </div>
     </div>
 
-   
-    <div class="card">
+    <!-- 3. Ágiles -->
+    <div class="card" id="agiles">
         <div class="section-title">
-            <div class="section-num">3</div>
+            <div class="section-num green">3</div>
             <h2>Marcos de Trabajo Ágiles</h2>
         </div>
+        <p class="intro-text" style="margin-bottom:16px;">
+            Nacen como alternativa para proyectos donde <strong>no es posible tener un detalle completo de requisitos</strong> desde el inicio, o donde se requiere adaptabilidad continua. Priorizan la entrega de producto sobre la documentación exhaustiva, con participación del cliente desde las primeras etapas. Nacen en 2001 con el <strong>Manifiesto Ágil</strong>.
+        </p>
 
-        <div class="method-block">
-            <h3>Manifiesto Ágil</h3>
-            <p>Busca entregar software funcional rápidamente y adaptarse con facilidad a los cambios del cliente.</p>
-            <div class="tag-list">
-                <span class="tag">Individuos e interacciones</span>
-                <span class="tag">Software funcionando</span>
-                <span class="tag">Colaboración con el cliente</span>
-                <span class="tag">Respuesta al cambio</span>
-            </div>
-            <div class="example-box">
-                <div class="example-label">Ejemplo</div>
-                <p>Un cliente solicita cambios durante el desarrollo de una app móvil. El equipo adapta el proyecto sin esperar a finalizar todo el sistema.</p>
-            </div>
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Los 4 valores del Manifiesto Ágil:</p>
+        <div class="tag-list" style="margin-bottom:18px;">
+            <span class="tag green">Individuos e interacciones &gt; procesos y herramientas</span>
+            <span class="tag green">Software funcionando &gt; documentación extensiva</span>
+            <span class="tag green">Colaboración con el cliente &gt; negociación contractual</span>
+            <span class="tag green">Respuesta al cambio &gt; seguir un plan</span>
         </div>
 
-        <div class="method-block">
-            <h3>Programación Extrema — XP</h3>
-            <p>Metodología ágil enfocada en la calidad del software y la mejora continua a través de valores claros.</p>
-            <div class="tag-list">
-                <span class="tag">Comunicación</span>
-                <span class="tag">Simplicidad</span>
-                <span class="tag">Retroalimentación</span>
-                <span class="tag">Coraje</span>
-                <span class="tag">Respeto</span>
-            </div>
-            <div class="example-box">
-                <div class="example-label">Ejemplo</div>
-                <p>Dos desarrolladores programan juntos un sistema de ventas: uno escribe código y el otro revisa posibles errores y mejoras en tiempo real.</p>
-            </div>
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Los 12 principios ágiles (resumen):</p>
+        <ul class="principles-list">
+            <li><span class="num green">1</span><span>Satisfacer al cliente mediante entrega temprana y continua de software de valor.</span></li>
+            <li><span class="num green">2</span><span>Los requisitos cambiantes son bienvenidos, incluso tardíos; el cambio es una ventaja competitiva.</span></li>
+            <li><span class="num green">3</span><span>Entregar frecuentemente software que funcione, en ciclos de semanas a meses.</span></li>
+            <li><span class="num green">4</span><span>Personas de negocio y desarrolladores trabajan juntos cotidianamente.</span></li>
+            <li><span class="num green">5</span><span>Construir proyectos en torno a individuos motivados, dándoles confianza y respaldo.</span></li>
+            <li><span class="num green">6</span><span>La comunicación cara a cara es la forma más efectiva dentro del equipo.</span></li>
+            <li><span class="num green">7</span><span>El software que funciona es la principal medida del progreso.</span></li>
+            <li><span class="num green">8</span><span>Los procesos ágiles promueven un ritmo de desarrollo sostenido e indefinido.</span></li>
+            <li><span class="num green">9</span><span>La atención continua a la excelencia técnica enaltece la agilidad.</span></li>
+            <li><span class="num green">10</span><span>La simplicidad —maximizar el trabajo no realizado— es esencial.</span></li>
+            <li><span class="num green">11</span><span>Las mejores arquitecturas, requisitos y diseños emergen de equipos auto-organizados.</span></li>
+            <li><span class="num green">12</span><span>En intervalos regulares el equipo reflexiona y ajusta su conducta para ser más efectivo.</span></li>
+        </ul>
+    </div>
+
+    <!-- XP -->
+    <div class="card" id="xp">
+        <div class="section-title">
+            <div class="section-num green">3.1</div>
+            <h2>Programación Extrema — XP</h2>
+        </div>
+        <p class="intro-text" style="margin-bottom:16px;">
+            XP (<em>Extreme Programming</em>) busca producir <strong>software de alta calidad</strong> en contextos con requisitos altamente cambiantes, tiempos fijos, tecnologías nuevas y equipos pequeños ubicados en un mismo sitio. Fue definida por Beck y Andrés (2004).
+        </p>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">5 Valores de XP:</p>
+        <div class="roles-grid" style="margin-bottom:18px;">
+            <div class="role-item"><strong>Comunicación</strong><span>Discusión cara a cara con herramientas visuales como tableros.</span></div>
+            <div class="role-item"><strong>Simplicidad</strong><span>Solo lo absolutamente necesario; fácil de entender para otros.</span></div>
+            <div class="role-item"><strong>Retroalimentación</strong><span>Revisión constante para establecer mejoras permanentes.</span></div>
+            <div class="role-item"><strong>Coraje</strong><span>Actuar en situaciones retadoras e intentar enfoques alternativos.</span></div>
+            <div class="role-item"><strong>Respeto</strong><span>Los miembros se respetan para comunicarse y alcanzar el objetivo del equipo.</span></div>
         </div>
 
-        <div class="method-block">
-            <h3>Scrum</h3>
-            <p>Divide el proyecto en ciclos cortos llamados <em>Sprints</em> para entregar funcionalidades de forma continua e incremental.</p>
-            <div class="tag-list">
-                <span class="tag">Product Owner</span>
-                <span class="tag">Scrum Master</span>
-                <span class="tag">Equipo de Desarrollo</span>
-                <span class="tag">Sprint</span>
-                <span class="tag">Daily Meeting</span>
-            </div>
-            <div class="example-box">
-                <div class="example-label">Ejemplo</div>
-                <p>Un equipo construye una tienda virtual: Sprint 1 crea el inicio de sesión, Sprint 2 desarrolla el catálogo y Sprint 3 implementa el carrito de compras.</p>
-            </div>
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Prácticas clave de XP:</p>
+        <div class="tag-list" style="margin-bottom:18px;">
+            <span class="tag green">El juego de la planificación</span>
+            <span class="tag green">Pequeños lanzamientos</span>
+            <span class="tag green">Programación en pareja</span>
+            <span class="tag green">Integración continua</span>
+            <span class="tag green">Pruebas constantes</span>
+            <span class="tag green">Diseño simple</span>
+            <span class="tag green">Reutilización de código</span>
+            <span class="tag green">Semana de 40 horas</span>
+        </div>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Roles en XP:</p>
+        <div class="roles-grid">
+            <div class="role-item"><strong>Cliente</strong><span>Establece prioridades del proyecto y necesidades puntuales.</span></div>
+            <div class="role-item"><strong>Programador</strong><span>Centro del marco; transforma requerimientos en código funcional.</span></div>
+            <div class="role-item"><strong>Tester</strong><span>Aplica pruebas para garantizar la calidad de los entregables.</span></div>
+            <div class="role-item"><strong>Coach</strong><span>Asesora al equipo y define el rumbo del proyecto.</span></div>
+            <div class="role-item"><strong>Manager</strong><span>Coordina actividades, asegura recursos y gestiona la comunicación externa.</span></div>
+        </div>
+
+        <div class="example-box" style="margin-top:16px;">
+            <div class="example-label">Ejemplo</div>
+            <p>Dos desarrolladores programan juntos un sistema de ventas: uno escribe código y el otro revisa posibles errores y mejoras en tiempo real (programación en pareja).</p>
         </div>
     </div>
 
- 
-    <div class="card">
+    <!-- RAD -->
+    <div class="card" id="rad">
+        <div class="section-title">
+            <div class="section-num amber">3.2</div>
+            <h2>RAD — Desarrollo Rápido de Aplicaciones</h2>
+        </div>
+        <p class="intro-text" style="margin-bottom:16px;">
+            Metodología ágil inventada por <strong>James Martin en 1991</strong>. Se centra en el desarrollo rápido mediante <strong>iteraciones frecuentes y retroalimentación constante</strong>, con un énfasis especial en la participación activa de los usuarios.
+        </p>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Características fundamentales:</p>
+        <div class="tag-list" style="margin-bottom:18px;">
+            <span class="tag amber">Mayor flexibilidad y adaptabilidad</span>
+            <span class="tag amber">Iteraciones rápidas</span>
+            <span class="tag amber">Mejor gestión del riesgo</span>
+            <span class="tag amber">Retroalimentación constante</span>
+        </div>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Fases de RAD:</p>
+        <div class="roles-grid" style="margin-bottom:18px;">
+            <div class="role-item"><strong>Definición de requisitos</strong><span>Las partes interesadas se reúnen para definir objetivos, presupuesto y cronogramas.</span></div>
+            <div class="role-item"><strong>Prototipado</strong><span>Se construyen, validan y mejoran prototipos con los usuarios hasta su aprobación.</span></div>
+            <div class="role-item"><strong>Construcción</strong><span>Los prototipos aprobados se transforman en modelos funcionales.</span></div>
+            <div class="role-item"><strong>Pruebas exhaustivas</strong><span>Se verifica que todos los elementos funcionen individual y colectivamente.</span></div>
+            <div class="role-item"><strong>Implementación</strong><span>Lanzamiento del producto: cargue inicial de datos y entrenamiento a usuarios.</span></div>
+        </div>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Equipos en RAD:</p>
+        <div class="roles-grid">
+            <div class="role-item"><strong>Equipo de diseño</strong><span>Diseña y construye el sistema.</span></div>
+            <div class="role-item"><strong>Administrador BD</strong><span>Rendimiento, integridad y seguridad de datos.</span></div>
+            <div class="role-item"><strong>Expertos de negocio</strong><span>Describen funciones y procesos afectados por el sistema.</span></div>
+            <div class="role-item"><strong>Documentador</strong><span>Documenta todas las salidas de los workshops.</span></div>
+        </div>
+    </div>
+
+    <!-- Scrum -->
+    <div class="card" id="scrum">
+        <div class="section-title">
+            <div class="section-num green">3.3</div>
+            <h2>Scrum</h2>
+        </div>
+        <p class="intro-text" style="margin-bottom:16px;">
+            Marco ágil de <strong>muy amplio uso en la industria</strong>. Se fundamenta en los valores del Manifiesto Ágil y define tres pilares fundamentales (SCRUMstudy, 2013).
+        </p>
+
+        <div class="tag-list" style="margin-bottom:18px;">
+            <span class="tag green">Transparencia — visibilidad del proceso para todos</span>
+            <span class="tag green">Inspección — revisión frecuente del avance</span>
+            <span class="tag green">Adaptación — ajuste continuo ante desviaciones</span>
+        </div>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Roles centrales:</p>
+        <div class="roles-grid" style="margin-bottom:18px;">
+            <div class="role-item"><strong>Product Owner</strong><span>Gestiona la pila de producto y representa al cliente dentro del equipo.</span></div>
+            <div class="role-item"><strong>Scrum Master</strong><span>Facilita el trabajo del equipo y garantiza la aplicación correcta del marco.</span></div>
+            <div class="role-item"><strong>Equipo de Desarrollo</strong><span>Equipo auto-organizado que construye los incrementos del producto.</span></div>
+        </div>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Eventos de Scrum:</p>
+        <ul class="events-list" style="margin-bottom:18px;">
+            <li>
+                <div class="event-name">Sprint</div>
+                <div class="event-desc">Iteración de 2 a 4 semanas con ciclo completo de análisis, diseño, construcción y pruebas para producir una versión entregable.</div>
+            </li>
+            <li>
+                <div class="event-name">Planeación del Sprint</div>
+                <div class="event-desc">Reunión previa al Sprint donde se seleccionan requerimientos del backlog, se detallan en tareas y se estiman tiempos. Un Sprint de 4 semanas tiene hasta 8 horas de planeación.</div>
+            </li>
+            <li>
+                <div class="event-name">Daily Scrum (Reunión Diaria)</div>
+                <div class="event-desc">Reunión de pie, máx. 15 minutos. Cada miembro informa: qué hizo ayer, qué hará hoy, qué impedimentos tiene.</div>
+            </li>
+            <li>
+                <div class="event-name">Revisión del Sprint</div>
+                <div class="event-desc">El equipo muestra los resultados al Product Owner y stakeholders. En un Sprint de 4 semanas, se reservan hasta 4 horas.</div>
+            </li>
+            <li>
+                <div class="event-name">Retrospectiva</div>
+                <div class="event-desc">Autoevaluación del equipo sobre el Sprint finalizado. Se responde: ¿Qué funcionó? ¿Qué no funcionó? ¿Qué debemos mejorar?</div>
+            </li>
+        </ul>
+
+        <p style="font-size:.88rem;font-weight:600;color:var(--text);margin-bottom:10px;">Artefactos clave:</p>
+        <div class="tag-list" style="margin-bottom:14px;">
+            <span class="tag green">Product Backlog — lista completa de requerimientos</span>
+            <span class="tag green">Sprint Backlog — requerimientos seleccionados para el Sprint</span>
+            <span class="tag green">Burndown Chart — seguimiento del avance</span>
+            <span class="tag green">Tablero de Scrum</span>
+        </div>
+
+        <div class="example-box">
+            <div class="example-label">Ejemplo</div>
+            <p>Un equipo construye una tienda virtual: Sprint 1 → inicio de sesión, Sprint 2 → catálogo de productos, Sprint 3 → carrito de compras. Cada Sprint entrega funcionalidad real y usable.</p>
+        </div>
+    </div>
+
+    <!-- 4. Planeación -->
+    <div class="card" id="planeacion">
         <div class="section-title">
             <div class="section-num">4</div>
             <h2>Planeación de Proyectos de Software</h2>
         </div>
-        <p style="color:var(--muted); font-size:.95rem;">La planificación permite estimar recursos, tiempos, costos y riesgos antes de iniciar el desarrollo.</p>
-        <div class="example-box" style="margin-top:14px;">
+        <p class="intro-text">
+            La planificación involucra actividades que buscan tener una <strong>imagen preliminar del software a construir</strong>, a partir de la cual se hacen estimaciones para determinar la viabilidad del proyecto según los recursos asignados. Permite estimar tiempos, costos, riesgos y recursos humanos antes de iniciar el desarrollo.
+        </p>
+        <p class="intro-text" style="margin-top:12px;">
+            En Scrum, la planeación incluye: <strong>documentos de visión</strong> del proyecto, <strong>presupuesto</strong>, <strong>cronogramas de lanzamiento</strong> e <strong>instrumentos de seguimiento</strong> como el Burndown Chart.
+        </p>
+        <div class="example-box" style="margin-top:16px;">
             <div class="example-label">Ejemplo</div>
-            <p>Para una app de pedidos a domicilio, la empresa calcula que necesitará cuatro meses, tres desarrolladores y un diseñador para completar el proyecto.</p>
+            <p>Para desarrollar una app de pedidos a domicilio, la empresa calcula que necesitará cuatro meses, tres desarrolladores y un diseñador. Esta estimación previa permite decidir si el proyecto es viable antes de comenzar.</p>
         </div>
     </div>
 
-    
+    <!-- Caso Práctico -->
     <div class="card">
         <div class="section-title">
-            <div class="section-num" style="background:var(--navy);">★</div>
+            <div class="section-num star">★</div>
             <h2>Caso Práctico — Clínica de Citas Médicas</h2>
         </div>
-        <p style="color:var(--muted); font-size:.93rem;">Una clínica desea crear una aplicación para reservar citas médicas. Así aborda el problema cada metodología:</p>
+        <p class="intro-text" style="margin-bottom:4px;">Una clínica desea crear una aplicación para reservar citas médicas. Así aborda el problema cada metodología:</p>
         <div class="caso-grid">
             <div class="caso-item">
                 <strong>Cascada</strong>
-                <span>Se definen todos los requisitos antes de comenzar a programar.</span>
+                <span>Se definen todos los requisitos antes de programar. Cada módulo se entrega al final del proyecto completo.</span>
             </div>
             <div class="caso-item">
                 <strong>RUP</strong>
-                <span>El sistema se construye mediante iteraciones controladas.</span>
+                <span>El sistema se construye por iteraciones: primero el módulo de pacientes, luego el de médicos, luego el de citas.</span>
             </div>
             <div class="caso-item">
                 <strong>XP</strong>
-                <span>Pruebas constantes y programación en pareja durante todo el proceso.</span>
+                <span>Pruebas constantes y programación en pareja. El cliente participa en cada ciclo de retroalimentación.</span>
+            </div>
+            <div class="caso-item">
+                <strong>RAD</strong>
+                <span>Se construyen prototipos rápidos del formulario de citas y se validan con los médicos antes de programar.</span>
             </div>
             <div class="caso-item">
                 <strong>Scrum</strong>
-                <span>El trabajo se organiza en Sprints de dos semanas con entregas continuas.</span>
+                <span>Sprint 1: registro de pacientes. Sprint 2: agenda de médicos. Sprint 3: notificaciones. Entregas cada 2 semanas.</span>
             </div>
         </div>
-        <p class="caso-footer">Cada metodología ofrece ventajas distintas según las necesidades del proyecto y el nivel de flexibilidad requerido.</p>
+        <p style="margin-top:16px;font-size:.9rem;color:var(--muted);">Cada metodología ofrece ventajas distintas según el nivel de certeza sobre los requisitos, el tamaño del equipo y la flexibilidad requerida por el cliente.</p>
+    </div>
+
+    <!-- Glosario -->
+    <div class="card" id="glosario">
+        <div class="section-title">
+            <div class="section-num" style="background:#7c3aed;">📖</div>
+            <h2>Glosario</h2>
+        </div>
+        <div class="glosario-grid">
+            <div class="glosario-item">
+                <div class="glosario-term">Iteración</div>
+                <div class="glosario-def">Ciclo limitado por tiempo donde se ejecutan actividades de análisis, diseño, construcción y pruebas.</div>
+            </div>
+            <div class="glosario-item">
+                <div class="glosario-term">Product Owner</div>
+                <div class="glosario-def">Rol central de Scrum encargado de la gestión del backlog de producto y representante del cliente.</div>
+            </div>
+            <div class="glosario-item">
+                <div class="glosario-term">Scrum Master</div>
+                <div class="glosario-def">Rol central de Scrum que facilita el trabajo del equipo y mantiene la correcta aplicación del marco.</div>
+            </div>
+            <div class="glosario-item">
+                <div class="glosario-term">Stakeholders</div>
+                <div class="glosario-def">Persona, organización o empresa interesada en el desarrollo del proyecto de software.</div>
+            </div>
+            <div class="glosario-item">
+                <div class="glosario-term">Sprint Backlog</div>
+                <div class="glosario-def">Lista de requerimientos seleccionados desde el product backlog para ser desarrollados en un Sprint.</div>
+            </div>
+            <div class="glosario-item">
+                <div class="glosario-term">Burndown Chart</div>
+                <div class="glosario-def">Gráfico de seguimiento que muestra el trabajo pendiente vs. el tiempo restante en un Sprint.</div>
+            </div>
+            <div class="glosario-item">
+                <div class="glosario-term">Casos de uso</div>
+                <div class="glosario-def">Descripción de las interacciones entre el usuario y el sistema para alcanzar un objetivo específico.</div>
+            </div>
+            <div class="glosario-item">
+                <div class="glosario-term">Prototipo</div>
+                <div class="glosario-def">Versión preliminar del sistema construida para validar requisitos con los usuarios antes del desarrollo final.</div>
+            </div>
+        </div>
     </div>
 
 </main>
 
 <footer>
-    <p>Trabajo Académico · Metodologías de Desarrollo de Software</p>
+    <p>Resumen basado en la guía oficial · <strong>SENA — Análisis y Desarrollo de Software</strong> · Metodologías de Desarrollo de Software</p>
 </footer>
 
 </body>
